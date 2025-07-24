@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý Sách - Thư viện</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📚 Danh sách Sách</h1>
+  </header>
+
+  <section class="form-section">
+    <h2>Thêm sách</h2>
+    <form id="add-book-form">
+      <input type="text" id="title" placeholder="Tên sách" required />
+      <input type="text" id="isbn" placeholder="ISBN" required />
+      <input type="number" id="categoryId" placeholder="ID thể loại" required />
+      <input type="number" id="authorId" placeholder="ID tác giả" required />
+      <button type="submit">Thêm</button>
+    </form>
+  </section>
+
+  <section class="list-section">
+    <h2>Danh sách</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên sách</th>
+          <th>ISBN</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="book-list"></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
