@@ -1,24 +1,24 @@
 pipeline {
     agent any
 
-
     stages {
         stage('Install dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'rm -rf /var/www/html/*'
-                sh 'cp -r build/* /var/www/html/'
+                bat 'rmdir /s /q C:\\xampp\\htdocs\\Lib_FE'
+                bat 'mkdir C:\\xampp\\htdocs\\Lib_FE'
+                bat 'xcopy /E /I /Y build\\* C:\\xampp\\htdocs\\Lib_FE\\'
             }
         }
     }
@@ -28,7 +28,7 @@ pipeline {
             echo '✅ CI/CD thành công!'
         }
         failure {
-            echo '❌ Thất bại, kiểm tra lại log.'
+            echo '❌ Thất bại, kiểm tra log.'
         }
     }
 }
